@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Exclusive Quote - Auto Insurance Scanner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src=//b-js.ringba.com/CA2b46f72a25504c8cb996d757c957d582 async></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 650px;
+            margin: 0 auto 30px;
+            padding: 0 20px;
+        }
+
+        .exclusive-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .exclusive-badge::before {
+            content: "🏛️";
+            font-size: 20px;
+        }
+
+        .service-live {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .service-live::before {
+            content: "●";
+            color: #dc2626;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .alert-box {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .alert-icon {
+            color: #dc2626;
+            font-size: 20px;
+        }
+
+        .alert-text {
+            color: #991b1b;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease;
+        }
+
+        .success-icon::after {
+            content: "✓";
+            color: white;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .call-instruction {
+            text-align: center;
+            font-size: 17px;
+            color: #4b5563;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            width: 100%;
+            max-width: 500px;
+            padding: 22px;
+            background: #22c55e;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+            display: block;
+            margin: 0 auto 30px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .timer-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .timer-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #f59e0b;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .timer-label::before {
+            content: "⚠️";
+            font-size: 20px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .timer-box {
+            background: #1f2937;
+            color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            min-width: 80px;
+            font-size: 40px;
+            font-weight: 700;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timer-separator {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+        }
+
+        .timer-instruction {
+            color: #6b7280;
+            font-size: 15px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 15px;
+            color: #4b5563;
+            margin-top: 20px;
+        }
+
+        .footer-text strong {
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            font-size: 28px;
+            opacity: 0.4;
+        }
+
+        .page-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .page-footer a {
+            color: #6b7280;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .offer-box {
+                padding: 25px 20px;
+            }
+
+            .cta-button {
+                font-size: 18px;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="exclusive-badge">
+            EXCLUSIVE SAVINGS
+        </div>
+        <div class="service-live">
+            SERVICE LIVE: 215 DAYS
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="alert-box">
+                <span class="alert-icon">⚠️</span>
+                <span class="alert-text">Most Drivers in <span class="city-text">your city</span> Are Overpaying</span>
+            </div>
+
+            <div class="success-icon"></div>
+
+            <h1>Congratulations!</h1>
+
+            <div class="subtitle">
+                You may qualify for lower rates.
+            </div>
+
+            <div class="call-instruction">
+                Call now to speak with a licensed agent.
+            </div>
+
+            <a href="tel:+18556111957" class="cta-button">
+                CALL NOW (855) 611-1957
+            </a>
+
+            <div class="timer-section">
+                <div class="timer-label">
+                    Your spot is reserved for:
+                </div>
+
+                <div class="countdown-timer">
+                    <div class="timer-box" id="minutes">01</div>
+                    <div class="timer-separator">:</div>
+                    <div class="timer-box" id="seconds">54</div>
+                </div>
+
+                <div class="timer-instruction">
+                    Call now before your quote expires
+                </div>
+            </div>
+
+            <div class="footer-text">
+                <strong>Stop funding their corporate jets.</strong> Pay only for what you need.
+            </div>
+
+            <div class="trust-icons">
+                🛡️ 🔒 ✓
+            </div>
+        </div>
+    </div>
+
+    <div class="page-footer">
+        © 2025 Consumer Leaks. Independent Market Research.
+        <br>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="page-footer">
+        © 2025 Consumer Leaks. Independent Market Research.
+        <br>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <script>
+        let userCity = 'your city'; // Default city
+
+        // Get user's city from geolocation API
+        async function getUserCity() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                if (data.city) {
+                    userCity = data.city;
+                    updateCityText();
+                }
+            } catch (error) {
+                console.log('Could not detect city, using default');
+            }
+        }
+
+        // Update all instances of city text
+        function updateCityText() {
+            const cityElements = document.querySelectorAll('.city-text');
+            cityElements.forEach(element => {
+                element.textContent = userCity;
+            });
+        }
+
+        // Countdown timer starting at 1:54
+        let totalSeconds = 114; // 1 minute 54 seconds
+        
+        function updateTimer() {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            
+            // Update display with leading zeros
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            
+            if (totalSeconds > 0) {
+                totalSeconds--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                // Timer expired - you can add logic here if needed
+                document.querySelector('.timer-instruction').textContent = 'Quote expired! Call now to get a new quote.';
+            }
+        }
+
+        // Start timer and city detection when page loads
+        window.addEventListener('load', function() {
+            updateTimer();
+            getUserCity();
+        });
+    </script>
+</body>
+</html>
